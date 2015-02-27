@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.arjinmc.ormlitedemo.MainActivity" >
+
+     <LinearLayout 
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal">
+         <EditText 
+             android:id="@+id/et_content"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"/>
+         <Button 
+             android:id="@+id/btn_search"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_weight="2"
+             android:text="search"/>
+     </LinearLayout>
+     <Button 
+         android:id="@+id/btn_insert"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         android:text="insert"/>
+     <ListView 
+         android:id="@+id/lv_result"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"/>
+</LinearLayout>

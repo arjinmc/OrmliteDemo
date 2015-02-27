@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    
+    <LinearLayout 
+        android:id="@+id/layout_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true">
+        <Button
+            android:id="@+id/item_btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="edit"/>
+        <Button
+            android:id="@+id/item_btn_del"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="del"/>
+    </LinearLayout>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:layout_alignParentLeft="true"
+	    android:layout_toLeftOf="@id/layout_buttons">
+	    <TextView android:id="@+id/tv_id"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        />
+	    <TextView android:id="@+id/tv_name"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        />
+	    <TextView android:id="@+id/tv_sex"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        />
+	    <TextView android:id="@+id/tv_age"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        />
+	    <TextView android:id="@+id/tv_address"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        />
+	</LinearLayout>
+</RelativeLayout>
