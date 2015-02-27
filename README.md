@@ -7,3 +7,5 @@ update<br>
 query with conditions<br>
 delete<br>
 upgrade database
+
+OrmLite Offical site:<a href="http://ormlite.com/">http://ormlite.com/</a>
