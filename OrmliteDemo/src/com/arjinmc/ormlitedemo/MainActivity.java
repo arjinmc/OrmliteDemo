@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.Callable;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import com.arjinmc.ormlitedemo.model.PersonBean;
 import com.arjinmc.ormlitedemo.utils.DataHelperUtil;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
+import com.j256.ormlite.misc.TransactionManager;
 
 public class MainActivity extends Activity implements OnClickListener{
 
@@ -63,6 +65,8 @@ public class MainActivity extends Activity implements OnClickListener{
 		switch(id){
 			case R.id.btn_insert:
 				insert();
+				//using transaction
+				//insertMore();
 				break;
 			case R.id.btn_search:
 				search();
@@ -126,6 +130,28 @@ public class MainActivity extends Activity implements OnClickListener{
 		List<PersonBean> list = simpleDao.queryForAll();
 		persons.addAll(list);
 		adapter.notifyDataSetChanged();
+	}
+	
+	/**
+	 * @desciption a sample with using transaction
+	 * @author Eminem Lu
+	 * @email arjinmc@hicsg.com
+	 * @create 2015/2/26
+	 */
+	private void insertMore(){
+		 try {
+			TransactionManager.callInTransaction(DataHelperUtil
+					 .getHelper(MainActivity.this).getConnectionSource(), new Callable<Void>() {
+			       
+				public Void call() throws Exception {
+			        	insert();
+			        	insert();
+			            return null;
+			    }
+			 });
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/**
