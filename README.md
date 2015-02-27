@@ -6,6 +6,7 @@ insert<br>
 update<br>
 query with conditions<br>
 delete<br>
-upgrade database
+upgrade database<br>
+transaction
 
 OrmLite Offical site:<a href="http://ormlite.com/">http://ormlite.com/</a>
